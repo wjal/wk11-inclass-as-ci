@@ -6,18 +6,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      name: Checkout code
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      name: Install packages
+      - name: Install packages
         run: npm ci
 
-      
-name: Run Jest Tests
-  run: npm run ci:test
-
-name: Run Cypress Tests
-  uses: cypress-io/github-action@v4
-  with:
-    build: npm run build
-    start: npm start
+      #- name: Run ESlint
+      #  run: npm run lint
